@@ -5,6 +5,7 @@ let secondImage, swim, skate;
 let minuteImage, ball, puck;
 let hourImage, guy, girl;
 let mouseImage, sun, snowflake;
+let winter = new Boolean(true);
 
 function preload(){
   //backgroundImage
@@ -17,7 +18,7 @@ function preload(){
 
  //secondImage
   swim = loadImage("images/swim.png")
- skate = loadImage("images/skate.png")
+  skate = loadImage("images/skate.png")
 
   //minuteImage
   ball = loadImage("images/ball.png")
@@ -57,6 +58,7 @@ function draw() {
   let hr = nf(hour(), 2, 0); 
   let mn = nf(minute(), 2, 0); 
   let sc = nf(second(), 2, 0);
+  let mos = month();
 
   //Clock
   image(clockImage,-250,-250,500,500);
@@ -83,26 +85,25 @@ function draw() {
   rotate(hrAngle);
   image(hourImage,-10,0,110,110);
   pop(); 
-}
 
-//If the user presses the mouse the clock will turn into a winter theme
-function mousePressed(){
+  if(mos > 3 && mos < 10){
+    winter == false;
+  }
+
+  if(winter){
   backgroundImage = snow;
   clockImage = ice;
   secondImage = skate;
   minuteImage = puck;
   hourImage = girl;
   mouseImage = snowflake;
-}
-
-//If the user releases the mouse the clock will turn back to a summer theme
-function mouseReleased(){
+  }
+  else{
   backgroundImage = sand;
   clockImage = water;
   secondImage = swim;
   minuteImage = ball;
   hourImage = guy;
   mouseImage = sun;
+  }
 }
-
-
