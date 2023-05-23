@@ -99,8 +99,7 @@ function draw() {
 }
 
 function mousePressed(){
-
+  image(mouseImage,mouseX-100,mouseY-100,200,200);
 }
 function mouseReleased(){
-
 }
