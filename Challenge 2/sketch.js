@@ -5,7 +5,6 @@ let secondImage, swim, skate;
 let minuteImage, ball, puck;
 let hourImage, guy, girl;
 let mouseImage, sun, snowflake;
-let winter = new Boolean(true);
 
 function preload(){
   //backgroundImage
@@ -79,11 +78,17 @@ function draw() {
   image(hourImage,-10,0,110,110);
   pop(); 
 
+  //Between March and October the clock will turn back to a summer theme
   if(mos > 3 && mos < 10){
-    winter == false;
+    backgroundImage = sand;
+    clockImage = water;
+    secondImage = swim;
+    minuteImage = ball;
+    hourImage = guy;
+    mouseImage = sun;
   }
-
-  if(winter){
+  //If it's any of the other months, the clock will turn into a winter theme
+  else{
   backgroundImage = snow;
   clockImage = ice;
   secondImage = skate;
@@ -91,12 +96,11 @@ function draw() {
   hourImage = girl;
   mouseImage = snowflake;
   }
-  else{
-  backgroundImage = sand;
-  clockImage = water;
-  secondImage = swim;
-  minuteImage = ball;
-  hourImage = guy;
-  mouseImage = sun;
-  }
+}
+
+function mousePressed(){
+
+}
+function mouseReleased(){
+
 }
