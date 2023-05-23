@@ -37,13 +37,6 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-
-  backgroundImage = sand;
-  clockImage = water;
-  secondImage = swim;
-  minuteImage = ball;
-  hourImage = guy;
-  mouseImage = sun;
 }
 
 function draw() {
